@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>الخدمات</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0 20px 50px 20px;
+            direction: rtl;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #111;
+            padding: 10px 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            height: 60px;
+        }
+        .imgg img {
+            height: 18px;
+            width: 120px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0 auto 0 0;
+        }
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links li a:hover {
+            background-color: #444;
+        }
+        .content {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        .content h3 {
+            color: #333;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        ul.services-list {
+            list-style-type: disc;
+            padding-right: 20px;
+            margin-top: 20px;
+        }
+        ul.services-list li {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #222;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .social-icons a {
+            color: #111;
+            font-size: 28px;
+            margin: 0 12px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        @media (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            ul.services-list {
+                padding-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- الشريط العلوي -->
+<div class="navbar">
+    <div class="logo"><img src="logo.png" alt="الشعار" /></div>
+    <div class="imgg"><img src="v.png" alt="صورة" /></div>
+    <ul class="nav-links">
+        <li><a href="form.html">طور هويتك</a></li>
+        <li><a href="pro.html">مشاريع فيورا</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="index.html">الرئيسية</a></li>
+    </ul>
+</div>
+
+<!-- محتوى الصفحة -->
+<div class="content">
+    <h3>
+        في VIORA، لا نقدّم تصميمًا فحسب، بل نبني حضورًا بصريًا متكاملاً يمنح كل مشروع هويته الفريدة، ويمنحه صوتًا يُسمع في زحام السوق. 
+        نقدّم باقة متنوعة من الخدمات الإبداعية التي تخدم المشاريع الناشئة والقائمة، وتلبي احتياجاتها البصرية من التأسيس حتى الترويج، وتشمل:
+    </h3>
+
+    <ul class="services-list">
+        <li>تصميم الهوية البصرية المتكاملة: ابتكار شعار وهوية تعكس جوهر المشروع، وتشمل اختيار الألوان، الخطوط، الاستخدامات، ودليل مرجعي احترافي للعلامة.</li>
+        <li>تطوير الهويات القائمة: تحديث الهويات القديمة لتواكب الاتجاهات الحديثة، مع الحفاظ على روح المشروع وشخصيته البصرية.</li>
+        <li>تصميم المواد التسويقية: تصميم بوسترات دعائية، مطبوعات، وبطاقات تعريف، تبرز العلامة بأسلوب جذّاب ومتسق.</li>
+        <li>تصميم محتوى خاص لمنصات التواصل الاجتماعي: من منشورات يومية إلى حملات موسمية، بأسلوب بصري متكامل مع هوية المشروع.</li>
+        <li>تصميم فيديوهات إعلانية قصيرة: نصنع حكايات مرئية تُعرض على إنستغرام أو منصات أخرى.</li>
+        <li>استشارات بصرية: جلسات توجيهية لتقييم الهوية الحالية وتقديم نصائح تطوير متخصصة.</li>
+    </ul>
+</div>
+
+<!-- أيقونات التواصل الاجتماعي -->
+<div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=61578085084084&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/viora_creativity?igsh=YXBzY284YW81bmk3" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة النبذة التعريفية</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+            color: white;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: #444;
+        }
+
+        h1, h2 {
+            margin: 20px 10px;
+            color: #333;
+        }
+
+        h3 {
+            color: #222;
+            margin-top: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
+            box-sizing: border-box;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item p {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .social-icons {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #000;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0073b1;
+        }
+
+        /* استجابة للجوال */
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo"><img src="nor/logo.png" alt="الشعار"></div>
+        <ul class="nav-links">
+            <li><a href="form.html">طور هويتك</a></li>
+            <li><a href="pro.html">مشاريع فيورا</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="services.html">الخدمات</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>متجر نور</h1>
+        <h2>متجر متخصص بالأشغال اليدوية، يجمع بين أصالة الحرف ولمسة عصرية</h2>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="nor/image1.jpg" alt="فنايل">
+                <p>فنايل</p>
+            </div>
+            <div class="gallery-item">
+                <img src="nor/image2.jpg" alt="حافظة مكياج">
+                <p>حافظة مكياج</p>
+            </div>
+            <div class="gallery-item">
+                <img src="nor/image3.jpg" alt="ميداليات">
+                <p>ميداليات</p>
+            </div>
+            <div class="gallery-item">
+                <img src="nor/image4.jpg" alt="باقات ورد">
+                <p>باقات ورد</p>
+            </div>
+            <div class="gallery-item">
+                <img src="nor/image5.jpg" alt="غلافات مصاحف">
+                <p>غلافات مصاحف</p>
+            </div>
+            <div class="gallery-item">
+                <img src="nor/image6.jpg" alt="شنط">
+                <p>شنط</p>
+            </div>
+        </div>
+
+        <h3>للحجز والاستفسار</h3>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/noorr_store3?igsh=ajN6YWcxZm9vaHN4" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+967774649873" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الصفحة الرئيسية</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* خلفية الصورة */
+    .fullscreen-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('image11.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    /* الشريط العلوي */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      padding: 10px 20px;
+      color: white;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .imgg img {
+      height: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* المحتوى الرئيسي */
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .content h3 {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    /* الأيقونات */
+    .social-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 2;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #0073b1;
+    }
+
+    /* تحسين العرض في الجوال */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        color: white;
+      }
+
+      .content h1 {
+        font-size: 2rem;
+      }
+
+      .content h3 {
+        font-size: 1.2rem;
+      }
+
+      .logo img,
+      .imgg img {
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content h1 {
+        font-size: 1.5rem;
+      }
+
+      .content h3 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الشريط العلوي -->
+  <div class="navbar">
+    <div class="logo"><img src="logo.png" alt="الشعار" /></div>
+    <div class="imgg"><img src="v.png" alt="صورة" /></div>
+    <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="form.html">طور هويتك</a></li>
+      <li><a href="pro.html">مشاريع فيورا</a></li>
+      <li><a href="about.html">من نحن</a></li>
+      <li><a href="services.html">الخدمات</a></li>
+      <li><a href="index.html">الرئيسية</a></li>
+    </ul>
+  </div>
+
+  <!-- الخلفية -->
+  <div class="fullscreen-image"></div>
+
+  <!-- المحتوى -->
+  <div class="content">
+    <h1>مرحباً بك في فيورا</h1>
+    <h3>حيث تُزهر الأفكار</h3>
+  </div>
+
+  <!-- أيقونات التواصل -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=61578085084084" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/viora_creativity" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
