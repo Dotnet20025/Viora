@@ -17,17 +17,18 @@
     }
 
     /* الشريط العلوي */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #111;
-      position: relative;
-      flex-direction: row-reverse; /* RTL */
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+   .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #111;
+  position: relative;
+  /* اجعل اتجاه الفليكس ثابت */
+  flex-direction: row-reverse; /* خليها row-reverse ثابته */
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
     /* حاوية الشعار واللوجو جنب بعض */
     .brand {
@@ -38,7 +39,7 @@
     }
 
     .brand img {
-      height: 30px;
+      height: 20px;
       display: block;
     }
 
@@ -184,8 +185,15 @@
 
       .navbar {
         flex-wrap: nowrap;
-        flex-direction: row !important;
+   
       }
+
+
+  .brand,
+  .menu-toggle,
+  .nav-links {
+    order: 0 !important; /* إعادة الترتيب الافتراضي */
+  }
     }
   </style>
 </head>
@@ -194,8 +202,10 @@
   <div class="navbar">
     <div class="brand">
      
-      <img src="v.png" alt="الشعار الإضافي" style="height: 25px;" />
-       <img src="logo.png" alt="الشعار" />
+     
+      <img src="v.png" alt="شعار إضافي">
+      <img src="logo.png" alt="الشعار">
+    
     </div>
 
     <button class="menu-toggle" onclick="toggleMenu()">
