@@ -1,170 +1,248 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>الصفحة الرئيسية</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* خلفية سوداء */
-            color: #fff;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الصفحة الرئيسية</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #1B2A47, #7287a3);
+      color: #fff;
+      text-align: center;
+    }
 
-        .navbar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #111;
-        }
+    /* الشريط العلوي */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #111;
+      position: relative;
+      flex-direction: row-reverse; /* RTL */
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-        .logo img {
-            height: 60px;
-        }
+    /* حاوية الشعار واللوجو جنب بعض */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      order: 1;
+    }
 
-        .imgg img {
-            height: 18px;
-            width: 120px;
-        }
+    .brand img {
+      height: 30px;
+      display: block;
+    }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            padding: 0;
-            margin: 0;
-        }
+    /* زر القائمة للجوال */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      order: 3;
+    }
 
-        .nav-links li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+    /* روابط التنقل */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+      order: 4;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-        .nav-links li a:hover {
-            background-color: #444;
-        }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      display: block;
+      white-space: nowrap;
+    }
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 20px;
-        }
+    .nav-links li a:hover {
+      background-color: #444;
+    }
 
-        .card {
-            background: #222;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(255 255 255 / 0.1);
-            width: 280px;
-            padding: 15px;
-            transition: transform 0.3s ease;
-        }
+    /* معرض البطاقات */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(255 255 255 / 0.2);
-        }
+    .card {
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255 255 255 / 0.1);
+      width: 280px;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-            height: 180px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(255 255 255 / 0.2);
+    }
 
-        .card h2 {
-            margin: 0;
-            font-weight: 700;
-            font-size: 1.4rem;
-        }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      display: block;
+    }
 
-        .card h2 a {
-            color: #fff;
-            text-decoration: none;
-        }
+    .card h2 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
 
-        .card h2 a:hover {
-            color: #00aaff;
-            text-decoration: underline;
-        }
+    .card h2 a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        .social-icons {
-            margin: 30px 0;
-        }
+    .card h2 a:hover {
+      color: #00aaff;
+      text-decoration: underline;
+    }
 
-        .social-icons a {
-            color: #fff;
-            font-size: 26px;
-            margin: 0 12px;
-            transition: color 0.3s ease;
-        }
+    /* أيقونات التواصل */
+    .social-icons {
+      margin: 30px 0;
+    }
 
-        .social-icons a:hover {
-            color: #00aaff;
-        }
+    .social-icons a {
+      color: #fff;
+      font-size: 26px;
+      margin: 0 12px;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
 
-        /* استجابة الجوال */
-        @media (max-width: 768px) {
-            .gallery {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    .social-icons a:hover {
+      color: #00aaff;
+    }
+
+    /* استجابة الجوال */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        width: 80%;
+        padding: 15px 0;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        text-align: center;
+        z-index: 100;
+        order: 4;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .navbar {
+        flex-wrap: nowrap;
+        flex-direction: row !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="logo"><img src="logo.png" alt="الشعار" /></div>
-        <div class="imgg"><img src="v.png" alt="صورة" /></div>
-        <ul class="nav-links">
-            <li><a href="form.html">طور هويتك</a></li>
-            <li><a href="pro.html">مشاريع فيورا</a></li>
-            <li><a href="about.html">من نحن</a></li>
-            <li><a href="services.html">الخدمات</a></li>
-            <li><a href="index.html">الرئيسية</a></li>
-        </ul>
+  <div class="navbar">
+    <div class="brand">
+     
+      <img src="v.png" alt="الشعار الإضافي" style="height: 25px;" />
+       <img src="logo.png" alt="الشعار" />
     </div>
 
-    <div class="gallery">
-        <div class="card">
-            <img src="image1.jpg" alt="متجر غيم" />
-            <h2><a href="gim.html">متجر غيم</a></h2>
-        </div>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
 
-        <div class="card">
-            <img src="image2.jpg" alt="نور ستور" />
-            <h2><a href="nor.html">نور ستور</a></h2>
-        </div>
+    <ul class="nav-links" id="navLinks">
+     <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="services.html">الخدمات</a></li>
+   
+      <li><a href="pro.html">مشاريع فيورا</a></li>
+      <li><a href="form.html">طور هويتك</a></li>
+         <li><a href="about.html">من نحن</a></li>
+    </ul>
+  </div>
 
-        <div class="card">
-            <img src="image3.jpg" alt="عنباتي" />
-            <h2><a href="enb.html">عنباتي</a></h2>
-        </div>
-
-        <div class="card">
-            <img src="image4.jpg" alt="بوتيك ستايل" />
-            <h2><a href="bot.html">بوتيك ستايل</a></h2>
-        </div>
+  <div class="gallery">
+    <div class="card">
+      <img src="image1.jpg" alt="متجر غيم" />
+      <h2><a href="gim.html">متجر غيم</a></h2>
     </div>
 
-    <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61578085084084&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/viora_creativity?igsh=YXBzY284YW81bmk3" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="card">
+      <img src="image2.jpg" alt="نور ستور" />
+      <h2><a href="nor.html">نور ستور</a></h2>
     </div>
 
+    <div class="card">
+      <img src="image3.jpg" alt="عنباتي" />
+      <h2><a href="enb.html">عنباتي</a></h2>
+    </div>
+
+    <div class="card">
+      <img src="image4.jpg" alt="بوتيك ستايل" />
+      <h2><a href="bot.html">بوتيك ستايل</a></h2>
+    </div>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=61578085084084&mibextid=ZbWKwL" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/viora_creativity?igsh=YXBzY284YW81bmk3" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>

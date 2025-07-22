@@ -1,45 +1,57 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>من نحن</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Tajawal', sans-serif;
-      background-color: #000;
+      background: linear-gradient(to bottom, #1B2A47, #7287a3);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
       color: white;
       direction: rtl;
     }
 
+    /* الشريط العلوي */
     .navbar {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
-      background-color: #111;
+      background-color: black;
+      padding: 10px 20px;
+      color: white;
+      position: relative;
+      z-index: 10;
+      flex-direction: row-reverse; /* للحفاظ على RTL وترتيب الشعار والقائمة */
     }
 
     .logo img {
       height: 60px;
     }
 
-    .imgg img {
-      height: 20px;
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      order: 2;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
       gap: 15px;
       padding: 0;
-      margin: 10px 0;
+      margin: 0;
+      order: 3;
     }
 
     .nav-links li a {
@@ -47,12 +59,19 @@
       color: white;
       font-weight: bold;
       transition: color 0.3s ease;
+      font-size: 16px;
     }
 
     .nav-links li a:hover {
       color: #00bcd4;
     }
 
+    /* لجعل الشعار في أقصى اليسار */
+    .logo {
+      order: 1;
+    }
+
+    /* محتوى الصفحة */
     .content {
       max-width: 900px;
       margin: 40px auto;
@@ -89,24 +108,37 @@
       color: #0073b1;
     }
 
+    /* استايلات الجوال */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        order: 2;
+      }
+
       .nav-links {
-        justify-content: center;
-        gap: 10px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      h3 {
-        font-size: 1rem;
-      }
-
-      .navbar {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
+        background-color: #111;
+        width: 80%;
+        padding: 15px 0;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        text-align: center;
+        z-index: 100;
       }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+
+     
     }
   </style>
 </head>
@@ -115,13 +147,17 @@
   <!-- الشريط العلوي -->
   <div class="navbar">
     <div class="logo"><img src="logo.png" alt="الشعار" /></div>
-    <div class="imgg"><img src="v.png" alt="صورة" /></div>
-    <ul class="nav-links">
-      <li><a href="form.html">طور هويتك</a></li>
-      <li><a href="pro.html">مشاريع فيورا</a></li>
-      <li><a href="about.html">من نحن</a></li>
-      <li><a href="services.html">الخدمات</a></li>
-      <li><a href="index.html">الرئيسية</a></li>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+       <li><a href="index.html">الرئيسية</a></li>
+       <li><a href="services.html">الخدمات</a></li>
+       <li><a href="form.html">طور هويتك</a></li>
+       <li><a href="pro.html">مشاريع فيورا</a></li>
+       <li><a href="about.html">من نحن</a></li>
     </ul>
   </div>
 
@@ -139,6 +175,12 @@
     <a href="https://www.facebook.com/profile.php?id=61578085084084" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://www.instagram.com/viora_creativity" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>

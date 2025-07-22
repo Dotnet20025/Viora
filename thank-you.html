@@ -1,130 +1,186 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>شكراً لك</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #1e1e2f; /* خلفية غامقة مريحة */
-            color: #f0f0f0;
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شكراً لك</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to bottom, #1B2A47, #7287a3);
+      color: #f0f0f0;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .navbar {
-            direction: ltr;
-            background-color: #222233;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    /* ✅ الشريط العلوي */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222233;
+      padding: 10px 20px;
+      position: relative;
+      flex-wrap: wrap;
+      direction: ltr;
+    }
 
-        .navbar .logo img {
-            height: 50px;
-        }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      order: 1;
+    }
 
-        .navbar .imgg img {
-            height: 18px;
-            width: 120px;
-        }
+    .logo-group img {
+      height: 40px;
+    }
 
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      order: 2;
+    }
 
-        .nav-links li a {
-            color: #ccc;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
+    .nav-links li a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-        .nav-links li a:hover {
-            color: #4caf50;
-        }
+    .nav-links li a:hover {
+      color: #4caf50;
+    }
 
-        main {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+      order: 3;
+    }
 
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            color: #4caf50;
-        }
+    /* ✅ استجابة للجوال */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        left: 10px;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+      }
 
-        p {
-            font-size: 1.3rem;
-            margin: 0;
-        }
+      .nav-links.show {
+        display: flex;
+      }
 
-        .social-icons {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #222233;
-        }
+      .menu-toggle {
+        display: block;
+      }
 
-        .social-icons a {
-            color: #ccc;
-            font-size: 1.6rem;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-            display: inline-block;
-        }
+      .logo-group {
+        order: 1;
+      }
 
-        .social-icons a:hover {
-            color: #4caf50;
-        }
-    </style>
+      .logo-group img {
+        height: 35px;
+      }
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .social-icons {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #222233;
+    }
+
+    .social-icons a {
+      color: #ccc;
+      font-size: 1.6rem;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      color: #4caf50;
+    }
+  </style>
 </head>
 <body>
-    <!-- الشريط العلوي -->
-    <div class="navbar" dir="ltr">
-        <div class="logo"><img src="logo.png" alt="الشعار" /></div>
-        <div class="imgg"><img src="v.png" alt="صورة" /></div>
-
-        <ul class="nav-links">
-            <li><a href="form.html">طور هويتك</a></li>
-            <li><a href="pro.html">مشاريع فيورا</a></li>
-            <li><a href="about.html">من نحن</a></li>
-            <li><a href="services.html">الخدمات</a></li>
-            <li><a href="index.html">الرئيسية</a></li>
-        </ul>
+  <!-- ✅ الشريط العلوي -->
+  <div class="navbar">
+    <!-- شعار الشركة يظهر أولاً -->
+    <div class="logo-group">
+      <img src="logo.png" alt="الشعار" />
+      <img src="v.png" alt="رمز" />
     </div>
 
-    <main>
-        <h1>شكراً على تواصلك مع فيورا</h1>
-        <p>سيتم الرد بأسرع وقت ممكن.</p>
-    </main>
+    <!-- زر القائمة للجوال -->
+    <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
 
-    <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61578085084084&mibextid=ZbWKwL" target="_blank" aria-label="Facebook"
-            ><i class="fab fa-facebook"></i
-        ></a>
-        <a href="https://www.instagram.com/viora_creativity?igsh=YXBzY284YW81bmk3" target="_blank" aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-        ></a>
-    </div>
+    <!-- روابط التنقل -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="services.html">الخدمات</a></li>
+      <li><a href="about.html">من نحن</a></li>
+      <li><a href="pro.html">مشاريع فيورا</a></li>
+      <li><a href="form.html">طور هويتك</a></li>
+    </ul>
+  </div>
+
+  <!-- ✅ المحتوى الرئيسي -->
+  <main>
+    <h1>شكراً على تواصلك مع فيورا</h1>
+    <p>سيتم الرد بأسرع وقت ممكن.</p>
+  </main>
+
+  <!-- ✅ روابط التواصل -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=61578085084084" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/viora_creativity" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <!-- ✅ كود القائمة الجانبية للجوال -->
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
