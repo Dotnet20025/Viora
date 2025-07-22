@@ -1,226 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الخدمات</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-  html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Tajawal', sans-serif;
-  background: linear-gradient(to bottom, #1B2A47, #7287a3);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.content {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-    /* الشريط العلوي */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: black;
-      padding: 10px 20px;
-      color: white;
-      position: relative;
-      z-index: 10;
-       display: flex;
- 
-  flex-direction: row-reverse; /* 💡 الحل هنا */
-
-
-
-
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    .imgg img {
-      height: 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* المحتوى الرئيسي */
-    
-
-    .content h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-.services-list {
-  padding-left: 20px; /* مسافة بادئة للقائمة */
-  margin-top: 20px;
-}
-
-.services-list li {
-  margin-bottom: 15px; /* مسافة بين عناصر القائمة */
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-
-
-    .content h3 {
-         line-height: 1.6; /* زيادة ارتفاع السطر لسهولة القراءة */
-  margin-bottom: 20px; /* مسافة تحت الفقرة */
-      font-size: 1.5rem;
-      margin-top: 10px;
-    }
-
-    /* الأيقونات */
-   .social-icons {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-
-    .social-icons a {
-      color: white;
-      font-size: 24px;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: #0073b1;
-    }
-
-    /* تحسين العرض في الجوال */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        background-color: black;
-        padding: 10px 0;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-        color: white;
-      }
-
-      .content h1 {
-        font-size: 2rem;
-      }
-
-      .content h3 {
-        font-size: 1.2rem;
-      }
-
-      .logo img,
-      .imgg img {
-        height: 30px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .content h1 {
-        font-size: 1.5rem;
-      }
-
-      .content h3 {
-        font-size: 1rem;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-
-</head>
-<body>
-
-<!-- الشريط العلوي -->
-<div class="navbar">
-  <div class="logo"><img src="logo.png" alt="الشعار" /></div>
-  <div class="imgg"><img src="v.png" alt="صورة" /></div>
-  <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-  <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">الرئيسية</a></li>
-       <li><a href="services.html">الخدمات</a></li>
-    <li><a href="form.html">طور هويتك</a></li>
-    <li><a href="pro.html">مشاريع فيورا</a></li>
-    <li><a href="about.html">من نحن</a></li>
-   
-  
-  </ul>
-</div>
-
-<!-- محتوى الصفحة -->
-<div class="content">
-  <h3>
-    في VIORA، لا نقدّم تصميمًا فحسب، بل نبني حضورًا بصريًا متكاملاً يمنح كل مشروع هويته الفريدة، ويمنحه صوتًا يُسمع في زحام السوق. 
-    نقدّم باقة متنوعة من الخدمات الإبداعية التي تخدم المشاريع الناشئة والقائمة، وتلبي احتياجاتها البصرية من التأسيس حتى الترويج، وتشمل:
-  </h3>
-
-  <ul class="services-list">
-    <li>تصميم الهوية البصرية المتكاملة: ابتكار شعار وهوية تعكس جوهر المشروع، وتشمل اختيار الألوان، الخطوط، الاستخدامات، ودليل مرجعي احترافي للعلامة.</li>
-    <li>تطوير الهويات القائمة: تحديث الهويات القديمة لتواكب الاتجاهات الحديثة، مع الحفاظ على روح المشروع وشخصيته البصرية.</li>
-    <li>تصميم المواد التسويقية: تصميم بوسترات دعائية، مطبوعات، وبطاقات تعريف، تبرز العلامة بأسلوب جذّاب ومتسق.</li>
-    <li>تصميم محتوى خاص لمنصات التواصل الاجتماعي: من منشورات يومية إلى حملات موسمية، بأسلوب بصري متكامل مع هوية المشروع.</li>
-    <li>تصميم فيديوهات إعلانية قصيرة: نصنع حكايات مرئية تُعرض على إنستغرام أو منصات أخرى.</li>
-    <li>استشارات بصرية: جلسات توجيهية لتقييم الهوية الحالية وتقديم نصائح تطوير متخصصة.</li>
-  </ul>
-</div>
-
-<!-- أيقونات التواصل الاجتماعي -->
-<div class="social-icons">
-  <a href="https://www.facebook.com/profile.php?id=61578085084084&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
-  <a href="https://www.instagram.com/viora_creativity?igsh=YXBzY284YW81bmk3" target="_blank"><i class="fab fa-instagram"></i></a>
-</div>
-
-<!-- سكربت إظهار/إخفاء القائمة -->
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("show");
-  }
-</script>
-
-</body>
-</html>
